@@ -266,35 +266,35 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4">
+      <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 py-3 md:px-6 md:py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 md:space-x-3">
             <div className="h-8 w-8 bg-blue-500 rounded flex items-center justify-center">
               <span className="text-white font-bold">K</span>
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+              <h1 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
                 {language === 'id'
                   ? 'Kalkulator Terlengkap'
                   : 'Complete Calculator'}
               </h1>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 hidden sm:block">
                 {language === 'id'
                   ? 'Matematika, Fisika, Kimia & Lainnya'
                   : 'Mathematics, Physics, Chemistry & More'}
               </p>
             </div>
           </div>
-          <div className="flex space-x-2">
+          <div className="flex space-x-1 md:space-x-2">
             <SimpleButton
               onClick={toggleLanguage}
-              className="bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500"
+              className="bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-xs md:text-sm px-2 py-1 md:px-4 md:py-2"
             >
               {language === 'id' ? 'EN' : 'ID'}
             </SimpleButton>
             <SimpleButton
               onClick={() => setDarkMode(!darkMode)}
-              className="bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500"
+              className="bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-xs md:text-sm px-2 py-1 md:px-4 md:py-2"
             >
               {darkMode ? '☀️' : '🌙'}
             </SimpleButton>
@@ -302,9 +302,26 @@ function App() {
         </div>
       </header>
 
-      <div className="flex">
-        {/* Sidebar */}
-        <aside className="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-4 min-h-screen">
+      <div className="flex flex-col md:flex-row">
+        {/* Mobile header with category selector */}
+        <div className="md:hidden bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4">
+          <div className="relative">
+            <select 
+              value={activeCategory}
+              onChange={(e) => setActiveCategory(e.target.value)}
+              className="w-full p-2 border rounded bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white"
+            >
+              {categories.map(category => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {/* Sidebar - hidden on mobile, visible on desktop */}
+        <aside className="hidden md:block w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-4 min-h-screen">
           <nav className="space-y-2">
             {categories.map(category => (
               <SimpleButton
@@ -323,7 +340,7 @@ function App() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-4 md:p-6">
           <SimpleCard
             title={
               categories.find(c => c.id === activeCategory)?.name ||
