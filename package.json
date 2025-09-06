@@ -1,7 +1,7 @@
 {
   "name": "kalkulator-lengkap",
   "private": true,
-  "version": "1.12.0",
+  "version": "1.18.0",
   "type": "module",
   "author": "Rasya Andrean <rasyaandrean@outlook.co.id>",
   "license": "MIT with additional restrictions - see LICENSE file",

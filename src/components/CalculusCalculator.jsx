@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FavoritesButton } from './FavoritesButton.jsx';
 
 function SimpleButton({ children, onClick, className = '' }) {
   return (
@@ -87,7 +88,7 @@ export function CalculusCalculator() {
       }
 
       return (h / 3) * sum;
-    } catch (err) {
+    } catch {
       return NaN;
     }
   };
@@ -134,7 +135,7 @@ export function CalculusCalculator() {
 
       // Evaluate the expression
       return Function('"use strict"; return (' + expression + ')')();
-    } catch (err) {
+    } catch {
       return NaN;
     }
   };

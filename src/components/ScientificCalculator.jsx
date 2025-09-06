@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FavoritesButton } from './FavoritesButton.jsx';
 
 function SimpleButton({ children, onClick, className = '' }) {
   return (
@@ -99,6 +100,13 @@ export function ScientificCalculator() {
 
   const handleScientificFunction = func => {
     const value = parseFloat(display);
+
+    // Error handling for invalid inputs
+    if (isNaN(value)) {
+      alert('Please enter a valid number');
+      return;
+    }
+
     let result;
 
     switch (func) {
@@ -187,13 +195,14 @@ export function ScientificCalculator() {
         result = Math.round(value);
         break;
       // Calculus-related functions
-      case 'diff':
+      case 'diff': {
         // Numerical derivative approximation (central difference)
         const h = 1e-5;
         const f = x => Math.sin(x); // Simple example function
         result = (f(value + h) - f(value - h)) / (2 * h);
         break;
-      case 'int':
+      }
+      case 'int': {
         // Numerical integration approximation (trapezoidal rule)
         const a = 0;
         const b = value;
@@ -206,6 +215,7 @@ export function ScientificCalculator() {
         }
         result = sum * hInt;
         break;
+      }
       default:
         result = value;
     }

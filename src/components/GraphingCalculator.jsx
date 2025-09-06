@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { FavoritesButton } from './FavoritesButton.jsx';
 
 function SimpleButton({ children, onClick, className = '' }) {
   return (
@@ -253,9 +254,12 @@ export function GraphingCalculator() {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <h3 className="text-xl font-semibold mb-6 text-gray-800 dark:text-white">
-        Kalkulator Grafik
-      </h3>
+      <div className="mb-4 flex justify-between items-center">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+          Kalkulator Grafik
+        </h3>
+        <FavoritesButton calculatorId="graphing" calculatorName="Graphing Calculator" />
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">

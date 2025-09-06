@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { FavoritesButton } from './FavoritesButton.jsx';
 
 function SimpleButton({ children, onClick, className = '' }) {
   return (
@@ -48,6 +50,7 @@ function ResultDisplay({ label, value, unit = '', explanation = '' }) {
 }
 
 export function UKMCalculator() {
+  const { language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('hpp');
 
   // HPP Calculator states
@@ -533,6 +536,7 @@ export function UKMCalculator() {
       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
         {renderContent()}
       </div>
+      <FavoritesButton calculatorId="dagang" calculatorName={language === 'id' ? 'Kalkulator UKM' : 'SME Calculator'} />
     </div>
   );
 }

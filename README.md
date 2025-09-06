@@ -91,7 +91,7 @@ A comprehensive calculator application with various mathematical, scientific, fi
 - Investment planning
 - Retirement planning
 
-### 13. Statistics
+### 13. Statistics Calculator
 
 - Descriptive statistics (mean, median, mode, standard deviation)
 - Linear regression
@@ -105,7 +105,7 @@ A comprehensive calculator application with various mathematical, scientific, fi
 - Irrigation water needs calculator
 - Agricultural commodity pricing calculator
 
-### 15. Social Media Analytics Calculator
+### 15. Social Media Calculator
 
 - Engagement rate calculator
 - Hashtag performance analysis
@@ -113,7 +113,7 @@ A comprehensive calculator application with various mathematical, scientific, fi
 - Post performance metrics
 - Social media ROI calculator
 
-### 16. Health & Medical Calculator
+### 16. Medical Calculator
 
 - BMI (Body Mass Index) calculator
 - Medicine dosage calculator
@@ -121,7 +121,7 @@ A comprehensive calculator application with various mathematical, scientific, fi
 - Pregnancy calculator
 - Calorie needs calculator
 
-### 17. Warung & SME Calculator
+### 17. Business Calculator
 
 - Cost of Goods Sold (COGS) calculator
 - Discount calculator
@@ -137,7 +137,7 @@ A comprehensive calculator application with various mathematical, scientific, fi
 - Loan amortization calculator
 - Internal Rate of Return (IRR) calculator
 
-### 19. Gaming & Probability Calculator
+### 19. Gaming Calculator
 
 - Drop rate calculator
 - Damage Per Second (DPS) calculator
@@ -145,7 +145,7 @@ A comprehensive calculator application with various mathematical, scientific, fi
 - Probability calculator
 - Random Number Generator
 
-### 20. AI & Machine Learning Calculator
+### 20. AI & ML Calculator
 
 - Neural Network complexity calculator
 - Performance metrics calculator (accuracy, precision, recall, F1-score)
@@ -160,6 +160,89 @@ A comprehensive calculator application with various mathematical, scientific, fi
 - Coordinate conversion (DMS to DD and vice versa)
 - Bearing calculator
 - Map scale calculator
+
+### 22. Time Calculator
+
+- Time difference calculator
+- Time unit conversion calculator
+- World time calculator
+- Time addition calculator
+
+### 23. Weather Calculator
+
+- Heat index calculator
+- Wind chill calculator
+- Dew point calculator
+- Temperature conversion calculator
+
+### 24. Energy Calculator
+
+- Kinetic energy calculator
+- Potential energy calculator
+- Power calculator
+- Efficiency calculator
+
+### 25. Construction Calculator
+
+- Concrete calculator
+- Brick calculator
+- Paint calculator
+- Roofing calculator
+
+### 26. Nutrition Calculator
+
+- BMI calculator
+- Calorie needs calculator
+- Macronutrient calculator
+- Hydration calculator
+
+### 27. Vehicle Calculator
+
+- Fuel efficiency calculator
+- Trip cost calculator
+- Vehicle loan calculator
+- Depreciation calculator
+
+### 28. Unit Converter
+
+- Length, weight, volume
+- Temperature (Celsius, Fahrenheit, Kelvin)
+- Time and speed
+- Data and bandwidth
+
+### 29. Currency Calculator
+
+- Conversion between world currencies
+- Current exchange rates
+- Currency swap feature
+
+### 30. Calculation History
+
+- View and manage your calculation history
+- Filter by category
+- Delete individual or all history entries
+
+### 31. User Profile
+
+- Manage profile information
+- Set language and theme preferences
+- Save favorite calculators
+- Save important calculations
+
+### 32. Custom Calculator Builder
+
+- Create your own calculators with custom variables
+- Define mathematical formulas for your calculations
+- Save and reuse custom calculators
+- Test custom calculators with sample data
+
+### 33. Settings
+
+- Customize app preferences
+- Toggle dark mode
+- Manage notification settings
+- Set decimal precision
+- Reset all settings to default
 
 ## Technology Stack
 

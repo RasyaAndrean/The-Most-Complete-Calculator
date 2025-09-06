@@ -33,6 +33,11 @@ export function BasicCalculator() {
     setWaitingForOperand(false)
   }
 
+  const clearEntry = () => {
+    setDisplay('0')
+    setWaitingForOperand(false)
+  }
+
   const performOperation = (nextOperation) => {
     const inputValue = parseFloat(display)
 
@@ -80,7 +85,7 @@ export function BasicCalculator() {
   }
 
   const buttons = [
-    ['C', '±', '%', '/'],
+    ['C', 'CE', '±', '/'],
     ['7', '8', '9', '*'],
     ['4', '5', '6', '-'],
     ['1', '2', '3', '+'],
@@ -97,7 +102,7 @@ export function BasicCalculator() {
           className="text-right text-2xl font-mono h-16 text-foreground bg-muted"
         />
       </div>
-      
+
       <div className="grid gap-2">
         {buttons.map((row, rowIndex) => (
           <div key={rowIndex} className="grid grid-cols-4 gap-2">
@@ -111,6 +116,8 @@ export function BasicCalculator() {
                 onClick={() => {
                   if (btn === 'C') {
                     clear()
+                  } else if (btn === 'CE') {
+                    clearEntry()
                   } else if (btn === '=') {
                     handleEquals()
                   } else if (['+', '-', '*', '/'].includes(btn)) {
@@ -135,4 +142,3 @@ export function BasicCalculator() {
     </div>
   )
 }
-

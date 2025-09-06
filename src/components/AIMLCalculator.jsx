@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { FavoritesButton } from './FavoritesButton.jsx';
 
 function SimpleButton({ children, onClick, className = '' }) {
   return (
@@ -55,6 +57,7 @@ function ResultDisplay({ label, value, unit = '', explanation = '' }) {
 }
 
 export function AIMLCalculator() {
+  const { language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('neural-network');
 
   // Neural Network Calculator states
@@ -606,6 +609,7 @@ export function AIMLCalculator() {
       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
         {renderContent()}
       </div>
+      <FavoritesButton calculatorId="ai-ml" calculatorName={language === 'id' ? 'Kalkulator AI & ML' : 'AI & ML Calculator'} />
     </div>
   );
 }

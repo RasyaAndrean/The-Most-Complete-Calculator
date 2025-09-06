@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { FavoritesButton } from './FavoritesButton.jsx';
 
 function SimpleButton({ children, onClick, className = "" }) {
   return (
-    <button 
+    <button
       onClick={onClick}
       className={`px-4 py-2 rounded border ${className}`}
     >
@@ -41,7 +42,7 @@ function ResultDisplay({ label, value, unit = "" }) {
 
 export function FinancialCalculator() {
   const [activeCategory, setActiveCategory] = useState('compound_interest')
-  
+
   // Compound Interest states
   const [principal, setPrincipal] = useState('')
   const [interestRate, setInterestRate] = useState('')
@@ -129,10 +130,10 @@ export function FinancialCalculator() {
 
     // Future value of initial investment
     const futureValueInitial = P * Math.pow(1 + r, n)
-    
+
     // Future value of monthly contributions (annuity)
     const futureValueAnnuity = PMT * ((Math.pow(1 + r, n) - 1) / r)
-    
+
     const totalValue = futureValueInitial + futureValueAnnuity
     const totalContributions = P + (PMT * n)
     const totalGains = totalValue - totalContributions
@@ -162,10 +163,10 @@ export function FinancialCalculator() {
 
     // Future value of current savings
     const futureCurrentSavings = currentSavingsNum * Math.pow(1 + returnRate, monthsToRetirement)
-    
+
     // Future value of monthly savings
     const futureMonthlySavings = monthlySavingsNum * ((Math.pow(1 + returnRate, monthsToRetirement) - 1) / returnRate)
-    
+
     const totalRetirementFund = futureCurrentSavings + futureMonthlySavings
     const totalContributions = currentSavingsNum + (monthlySavingsNum * monthsToRetirement)
 
@@ -187,7 +188,7 @@ export function FinancialCalculator() {
   const renderCompoundInterest = () => (
     <div>
       <h3 className="text-lg font-semibold mb-4">Kalkulator Bunga Majemuk</h3>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <InputField label="Modal Awal" value={principal} onChange={setPrincipal} unit="Rp" />
         <InputField label="Tingkat Bunga" value={interestRate} onChange={setInterestRate} unit="% per tahun" />
@@ -196,8 +197,8 @@ export function FinancialCalculator() {
           <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
             Frekuensi Penggabungan
           </label>
-          <select 
-            value={compoundFrequency} 
+          <select
+            value={compoundFrequency}
             onChange={(e) => setCompoundFrequency(e.target.value)}
             className="w-full px-3 py-2 border rounded"
           >
@@ -210,7 +211,7 @@ export function FinancialCalculator() {
         </div>
       </div>
 
-      <SimpleButton 
+      <SimpleButton
         onClick={calculateCompoundInterest}
         className="bg-green-500 text-white hover:bg-green-600 mb-4"
       >
@@ -235,14 +236,14 @@ export function FinancialCalculator() {
   const renderLoanCalculator = () => (
     <div>
       <h3 className="text-lg font-semibold mb-4">Kalkulator Pinjaman</h3>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <InputField label="Jumlah Pinjaman" value={loanAmount} onChange={setLoanAmount} unit="Rp" />
         <InputField label="Tingkat Bunga" value={loanRate} onChange={setLoanRate} unit="% per tahun" />
         <InputField label="Jangka Waktu" value={loanTerm} onChange={setLoanTerm} unit="tahun" />
       </div>
 
-      <SimpleButton 
+      <SimpleButton
         onClick={calculateLoan}
         className="bg-blue-500 text-white hover:bg-blue-600 mb-4"
       >
@@ -267,7 +268,7 @@ export function FinancialCalculator() {
   const renderInvestmentCalculator = () => (
     <div>
       <h3 className="text-lg font-semibold mb-4">Kalkulator Investasi</h3>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <InputField label="Investasi Awal" value={initialInvestment} onChange={setInitialInvestment} unit="Rp" />
         <InputField label="Kontribusi Bulanan" value={monthlyContribution} onChange={setMonthlyContribution} unit="Rp" />
@@ -275,7 +276,7 @@ export function FinancialCalculator() {
         <InputField label="Periode Investasi" value={investmentYears} onChange={setInvestmentYears} unit="tahun" />
       </div>
 
-      <SimpleButton 
+      <SimpleButton
         onClick={calculateInvestment}
         className="bg-purple-500 text-white hover:bg-purple-600 mb-4"
       >
@@ -300,7 +301,7 @@ export function FinancialCalculator() {
   const renderRetirementCalculator = () => (
     <div>
       <h3 className="text-lg font-semibold mb-4">Perencanaan Pensiun</h3>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <InputField label="Usia Saat Ini" value={currentAge} onChange={setCurrentAge} unit="tahun" />
         <InputField label="Usia Pensiun" value={retirementAge} onChange={setRetirementAge} unit="tahun" />
@@ -309,7 +310,7 @@ export function FinancialCalculator() {
         <InputField label="Tingkat Pengembalian" value={expectedReturn} onChange={setExpectedReturn} unit="% per tahun" />
       </div>
 
-      <SimpleButton 
+      <SimpleButton
         onClick={calculateRetirement}
         className="bg-orange-500 text-white hover:bg-orange-600 mb-4"
       >
@@ -353,8 +354,8 @@ export function FinancialCalculator() {
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
               className={`${
-                activeCategory === category.id 
-                  ? 'bg-green-500 text-white hover:bg-green-600' 
+                activeCategory === category.id
+                  ? 'bg-green-500 text-white hover:bg-green-600'
                   : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500'
               }`}
             >
@@ -370,4 +371,3 @@ export function FinancialCalculator() {
     </div>
   )
 }
-

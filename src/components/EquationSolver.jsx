@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FavoritesButton } from './FavoritesButton.jsx';
 
 function SimpleButton({ children, onClick, className = '' }) {
   return (

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { FavoritesButton } from './FavoritesButton.jsx';
 
 function SimpleButton({ children, onClick, className = '' }) {
   return (
@@ -48,6 +50,7 @@ function ResultDisplay({ label, value, unit = '', explanation = '' }) {
 }
 
 export function SocialMediaCalculator() {
+  const { language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('engagement');
 
   // Engagement Rate Calculator states
@@ -532,6 +535,7 @@ export function SocialMediaCalculator() {
       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border">
         {renderContent()}
       </div>
+      <FavoritesButton calculatorId="sosial-media" calculatorName={language === 'id' ? 'Kalkulator Sosial Media' : 'Social Media Calculator'} />
     </div>
   );
 }

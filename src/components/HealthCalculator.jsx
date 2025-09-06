@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { FavoritesButton } from './FavoritesButton.jsx';
 
 function SimpleButton({ children, onClick, className = '' }) {
   return (
